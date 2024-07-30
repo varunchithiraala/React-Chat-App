@@ -17,6 +17,7 @@
 
 .chat-box-introductions-container {
   border-bottom: 1px solid #808080;
+  margin-bottom: 4px;
   display: flex;
   justify-content: space-between;
 }
@@ -71,6 +72,7 @@
   padding-right: 6px;
   border: 1px solid #131313;
   border-radius: 25px;
+  margin-top: 4px;
   position: relative;
   display: flex;
   align-items: center;
