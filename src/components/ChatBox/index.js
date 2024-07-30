@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Picker from 'emoji-picker-react';
 import { CiFaceSmile } from "react-icons/ci";
 import { HiOutlineUsers } from "react-icons/hi2";
+import { IoMdSend } from "react-icons/io";
 import ChatMessage from '../ChatMessage';
 import './index.css';
 
@@ -119,11 +120,23 @@ const ChatBox = () => {
           className="emoji-icon"
           onClick={() => setShowEmojiPicker(!showEmojiPicker)}
         />
-        {showEmojiPicker && <div className="emoji-picker-wrapper"><Picker onEmojiClick={onEmojiClick} /></div>}
+        <IoMdSend 
+          className="send-icon"
+          onClick={handleSend}
+        />
+        {showEmojiPicker && (
+          <div className="emoji-picker-wrapper">
+            <Picker onEmojiClick={onEmojiClick} />
+          </div>
+        )}
         {showUserList && (
           <div className="user-list">
-            {user_list.map((user) => (
-              <div key={user} className="user-list-item" onClick={() => handleUserClick(user)}>
+            {user_list.map((user, index) => (
+              <div
+                key={index}
+                className="user-list-item"
+                onClick={() => handleUserClick(user)}
+              >
                 {user}
               </div>
             ))}
