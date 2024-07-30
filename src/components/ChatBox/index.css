@@ -94,3 +94,29 @@
   bottom: 45px;
   right: 15px;
 }
+
+.user-list {
+  background-color: #fafafa;
+  max-height: 150px;
+  width: 200px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: absolute;
+  bottom: 45px;
+  left: 10px;
+  z-index: 2;
+}
+
+.user-list-item {
+  color: #666666;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.user-list-item:hover {
+  color: #000000;
+  background-color: #dfe5ec;
+}
