@@ -1,4 +1,3 @@
-// ChatBox.js
 import React, { useState } from 'react';
 import Picker from 'emoji-picker-react';
 import { CiFaceSmile } from "react-icons/ci";
@@ -63,13 +62,15 @@ const ChatBox = () => {
   return (
     <div className="chat-box-container">
       <div className="chat-header-container">
-        <div>
-          <h2 className="introductions-heading">Introductions</h2>
-          <p className="introductions-text">This Channel is For Company Wide Chatter</p>
-        </div>
-        <div className="users-icon-container">
-          <span className="users-count">3 | 100</span>
-          <HiOutlineUsers className="users-icon" />
+        <div className="chat-box-introductions-container">
+          <div>
+            <h2 className="introductions-heading">Introductions</h2>
+            <p className="introductions-text">This Channel is For Company Wide Chatter</p>
+          </div>
+          <div className="users-icon-container">
+            <span className="users-count">3 | 100</span>
+            <HiOutlineUsers className="users-icon" />
+          </div>
         </div>
       </div>
       <div className="messages-container">
