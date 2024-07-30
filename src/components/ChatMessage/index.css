@@ -25,10 +25,6 @@
   margin: 4px 0;
 }
 
-.message-like-container {
-  display: flex;
-  flex-direction: column;
-}
 
 .message-time {
   color: #808080;
@@ -48,12 +44,32 @@
   display: inline-block;
 }
 
+.message-like-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .like-button {
-  text-align: right;
-  color: #555555;
-  background: none;
-  font-size: 14px;
+  background-color: transparent;
+  font-size: 12px;
+  padding: 0;
   border: none;
-  margin: 0;
+  outline: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .like-button {
+    font-size: 14px;
+  }
+}
+
+.like-count {
+  color: #555555;
+}
+
+@media screen and (max-width: 767px) {
+  .like-count {
+    font-size: 14px;
+  }
 }
