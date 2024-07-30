@@ -24,9 +24,11 @@ const ChatMessage = ({ message, onLike }) => {
         <h1 className="user-name">{user}<span className="message-time">{time}</span></h1>
         <span className="message-text">
           {text}<br />
-          <p className="like-button" onClick={onLike}>
-            👍{likes}
-          </p>
+          <div className="message-like-container">
+            <button className="like-button" onClick={onLike}>
+              👍<span className="like-count">{likes}</span>
+            </button>
+          </div>
         </span>
       </div>
     </div>
