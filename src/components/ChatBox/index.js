@@ -85,11 +85,11 @@ const ChatBox = () => {
       <div className="chat-input-container">
         <input
           type="text"
-          placeholder="Type a message..."
           className="chat-input"
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={handleKeyPress}
+          placeholder="Type a Message..."
         />
         <CiFaceSmile
           className="emoji-icon"
