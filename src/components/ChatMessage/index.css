@@ -71,5 +71,6 @@
 @media screen and (max-width: 767px) {
   .like-count {
     font-size: 14px;
+    margin-left: 2px;
   }
 }
