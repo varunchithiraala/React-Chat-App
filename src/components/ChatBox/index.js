@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Picker from 'emoji-picker-react';
 import { CiFaceSmile } from "react-icons/ci";
 import { HiOutlineUsers } from "react-icons/hi2";
@@ -30,6 +30,9 @@ const ChatBox = () => {
   ]);
   const [newMessage, setNewMessage] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const [showUserList, setShowUserList] = useState(false);
+  const [mentionIndex, setMentionIndex] = useState(-1);
+  const inputRef = useRef(null);
 
   const handleSend = () => {
     if (newMessage.trim() === '') return;
@@ -57,6 +60,26 @@ const ChatBox = () => {
   const onEmojiClick = (emojiObject) => {
     setNewMessage(newMessage + emojiObject.emoji);
     setShowEmojiPicker(false);
+  };
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setNewMessage(value);
+
+    const cursorPosition = event.target.selectionStart;
+    if (value[cursorPosition - 1] === '@') {
+      setMentionIndex(cursorPosition);
+      setShowUserList(true);
+    } else {
+      setShowUserList(false);
+    }
+  };
+
+  const handleUserClick = (user) => {
+    const newText = newMessage.slice(0, mentionIndex) + user + newMessage.slice(mentionIndex);
+    setNewMessage(newText + " ");
+    setShowUserList(false);
+    inputRef.current.focus();
   };
 
   return (
@@ -87,8 +110,9 @@ const ChatBox = () => {
           type="text"
           className="chat-input"
           value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
+          onChange={handleInputChange}
           onKeyDown={handleKeyPress}
+          ref={inputRef}
           placeholder="Type a Message..."
         />
         <CiFaceSmile
@@ -96,6 +120,15 @@ const ChatBox = () => {
           onClick={() => setShowEmojiPicker(!showEmojiPicker)}
         />
         {showEmojiPicker && <div className="emoji-picker-wrapper"><Picker onEmojiClick={onEmojiClick} /></div>}
+        {showUserList && (
+          <div className="user-list">
+            {user_list.map((user) => (
+              <div key={user} className="user-list-item" onClick={() => handleUserClick(user)}>
+                {user}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
