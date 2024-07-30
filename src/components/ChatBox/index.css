@@ -68,6 +68,7 @@
 
 .chat-input-container {
   padding: 8px 16px;
+  padding-right: 6px;
   border: 1px solid #131313;
   border-radius: 25px;
   position: relative;
@@ -85,6 +86,12 @@
 
 .emoji-icon {
   margin-left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.send-icon {
+  margin-left: 6px;
   font-size: 24px;
   cursor: pointer;
 }
