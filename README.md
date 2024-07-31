@@ -66,8 +66,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - React for the dynamic UI components.
 
+## Contact
 
-### Notes:
-- **Mentions Feature**: You can add a section about the mentions feature in the future when it's implemented.
+For any questions or feedback, please contact:
 
-Feel free to modify the `README.md` file according to your project's specifics or additional features.
+- **Name:** Ch. Varun Kumar
+- **Email:** varuncvk13@gmail.com
+- **GitHub:** [https://github.com/varunchithiraala](https://github.com/varunchithiraala)
